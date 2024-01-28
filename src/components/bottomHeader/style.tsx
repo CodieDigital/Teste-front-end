@@ -13,7 +13,7 @@ export const BottomHeaderStyle = styled.section`
         flex-direction: column;
         gap: 20px;
         height: 117px;
-        width: 90%;
+        width: 80%;
         max-width: 1210px;  
         margin: auto;
 

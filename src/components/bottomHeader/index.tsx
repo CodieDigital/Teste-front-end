@@ -1,7 +1,8 @@
-import { IoChevronForwardOutline } from 'react-icons/io5';
+import { IoChevronForwardOutline } from 'react-icons/io5'
 import { BottomHeaderStyle } from './style'
+import { IBottomHeader } from '../../interfaces/components'
 
-export const BottomHeader = ({section, description}: any) => {
+export const BottomHeader = ({section, description}: IBottomHeader) => {
     return (
         <>
             <BottomHeaderStyle>

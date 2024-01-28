@@ -1,16 +1,13 @@
 import styled from 'styled-components'
+import { ISelectPokemon } from '../../interfaces/components'
 
-interface ISelectProps {
-    pokemon?: boolean
-}
-
-export const DivLabelSelect = styled.div<ISelectProps>`
+export const DivLabelSelect = styled.div<ISelectPokemon>`
 
     display: flex;
-    flex-direction: ${(props: ISelectProps) => (props.pokemon ? 'row' : 'column')};
-    align-items: ${(props: ISelectProps) => (props.pokemon ? 'center' : 'none')};
-    max-width: ${(props: ISelectProps) => (props.pokemon ? '548px' : '265px')};
-    gap: ${(props: ISelectProps) => (props.pokemon ? '30px' : '10px')};
+    flex-direction: ${(props: ISelectPokemon) => (props.$selectPokemon ? 'row' : 'column')};
+    align-items: ${(props: ISelectPokemon) => (props.$selectPokemon ? 'center' : 'none')};
+    max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '500px' : '265px')};
+    gap: ${(props: ISelectPokemon) => (props.$selectPokemon ? '30px' : '10px')};
     position: relative;
 
     > label {
@@ -24,7 +21,7 @@ export const DivLabelSelect = styled.div<ISelectProps>`
         -moz-appearance: none;
         width: 100%;
         min-width: 256px;
-        max-width: ${(props: ISelectProps) => (props.pokemon ? '438px' : '265px')};
+        max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '438px' : '265px')};
         height: 45px;
         font-size: 14px;
         font-weight: medium;

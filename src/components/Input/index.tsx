@@ -1,6 +1,7 @@
+import { IInput } from '../../interfaces/components'
 import { DivLabelInput } from './style'
 
-export const Input = ({valueLabel, idInput, typeInput, placeholder }: any) => {
+export const Input = ({valueLabel, idInput, typeInput, placeholder }: IInput) => {
 
     return (
         <>

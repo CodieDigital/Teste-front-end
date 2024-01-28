@@ -2,9 +2,10 @@ import { MdExpandMore } from 'react-icons/md';
 import { MdExpandLess } from 'react-icons/md';
 import { useEffect, useState } from 'react'
 import { DivLabelSelect } from './style';
+import { ISelect } from '../../interfaces/components';
 
 
-export const Select = ({valueLabel, idSelect, optionValue, section, options }: any) => {
+export const Select = ({valueLabel, idSelect, selectPokemon, options }: ISelect) => {
 
     const [expand, setExpand] = useState(false)
     
@@ -26,7 +27,7 @@ export const Select = ({valueLabel, idSelect, optionValue, section, options }: a
 
     return (
         <>
-            <DivLabelSelect pokemon={section}>
+            <DivLabelSelect $selectPokemon={selectPokemon}>
                 <label htmlFor={idSelect}>{valueLabel}</label>
                 <select name={valueLabel} id={idSelect} >
                     {
