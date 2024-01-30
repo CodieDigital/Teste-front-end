@@ -4,10 +4,12 @@ import { ISelectPokemon } from '../../interfaces/components'
 export const DivLabelSelect = styled.div<ISelectPokemon>`
 
     display: flex;
+    justify-content: space-between;
     flex-direction: ${(props: ISelectPokemon) => (props.$selectPokemon ? 'row' : 'column')};
     align-items: ${(props: ISelectPokemon) => (props.$selectPokemon ? 'center' : 'none')};
-    max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '500px' : '265px')};
-    gap: ${(props: ISelectPokemon) => (props.$selectPokemon ? '30px' : '10px')};
+    min-width: 265px;
+    max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '548px' : '265px')};
+    gap: ${(props: ISelectPokemon) => (props.$selectPokemon ? '38px' : '8px')};
     position: relative;
 
     > label {
@@ -21,7 +23,7 @@ export const DivLabelSelect = styled.div<ISelectPokemon>`
         -moz-appearance: none;
         width: 100%;
         min-width: 256px;
-        max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '438px' : '265px')};
+        max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '436px' : '265px')};
         height: 45px;
         font-size: 14px;
         font-weight: medium;

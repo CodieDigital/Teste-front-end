@@ -1,15 +1,16 @@
+import React from 'react'
 import { IInput } from '../../interfaces/components'
 import { DivLabelInput } from './style'
 
-export const Input = ({valueLabel, idInput, typeInput, placeholder }: IInput) => {
+export const Input = React.forwardRef<HTMLInputElement, IInput>(({valueLabel, idInput, typeInput, placeholder, ...rest}, ref) => {
 
     return (
         <>
             <DivLabelInput>
                 <label htmlFor={idInput}>{valueLabel}</label>
-                <input id={idInput} type={typeInput} placeholder={placeholder} />
+                <input id={idInput} type={typeInput} placeholder={placeholder} ref={ref} {...rest} />
             </DivLabelInput>
         </>
     )
 
-}
+})

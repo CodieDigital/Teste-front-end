@@ -5,7 +5,7 @@ export const DivLabelInput = styled.div`
     display: flex;
     flex-direction: column;
     width: 265px;
-    gap: 5px;
+    gap: 8px;
 
     label {
         font-size: 12px;
@@ -14,7 +14,7 @@ export const DivLabelInput = styled.div`
     }
 
     input {
-        height: 45px;
+        height: 39px;
         font-size: 14px;
         font-weight: medium;
         padding-left: 15px;

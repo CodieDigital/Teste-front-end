@@ -10,6 +10,9 @@ export const FooterStyle = styled.footer`
     background-color: #1D1D1D;
     
     > p {
+        width: 80%;
+        text-align: center;
+        line-height: 20px;
         font-size: 14px;
         font-weight: normal;
         color: #FFFFFF;

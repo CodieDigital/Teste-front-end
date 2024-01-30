@@ -5,7 +5,7 @@ export const HeaderStyle = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 101px;
+    min-height: 104px;
     width: 90%;
     max-width: 1300px;
     margin: 0 auto;

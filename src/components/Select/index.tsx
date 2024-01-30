@@ -1,12 +1,12 @@
 import { MdExpandMore } from 'react-icons/md';
 import { MdExpandLess } from 'react-icons/md';
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DivLabelSelect } from './style';
 import { ISelect } from '../../interfaces/components';
 
 
-export const Select = ({valueLabel, idSelect, selectPokemon, options }: ISelect) => {
-
+export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel, idSelect, selectPokemon, options, callBack, ...rest }, ref) => {
+    
     const [expand, setExpand] = useState(false)
     
     useEffect(() => {
@@ -17,22 +17,23 @@ export const Select = ({valueLabel, idSelect, selectPokemon, options }: ISelect)
                 setExpand(false)   
             }
         }
-        
         document.addEventListener('click', handleClick)
-
         return () => {
             document.removeEventListener('click', handleClick);
         }
     }, [expand])
-
+    
     return (
         <>
             <DivLabelSelect $selectPokemon={selectPokemon}>
                 <label htmlFor={idSelect}>{valueLabel}</label>
-                <select name={valueLabel} id={idSelect} >
+                <select ref={ref} {...rest} onChange={(e) => {
+                    e.preventDefault()
+                    callBack ? callBack(e.target.value) : null
+                }} name={idSelect} id={idSelect} >
                     {
-                        options?.map((item: any) => {
-                            return <option key={item} value={item}>{item}</option>
+                        options?.map((item: string, index: number) => {
+                            return <option key={index} value={item}>{item}</option>
                         })
                     }
                 </select>
@@ -42,5 +43,4 @@ export const Select = ({valueLabel, idSelect, selectPokemon, options }: ISelect)
             </DivLabelSelect>
         </>
     )
-
-}
+})

@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <>
             <FooterStyle>
-                <p>Todas as marcas e ilustrações utilizadas são de seus resepctivos donos.</p>
+                <p>Todas as marcas e ilustrações utilizadas são de seus respectivos donos.</p>
             </FooterStyle>
         </>
     )
