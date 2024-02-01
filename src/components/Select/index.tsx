@@ -1,8 +1,8 @@
+import { ISelect } from '../../interfaces/components';
+import React, { useEffect, useState } from 'react'
 import { MdExpandMore } from 'react-icons/md';
 import { MdExpandLess } from 'react-icons/md';
-import React, { useEffect, useState } from 'react'
 import { DivLabelSelect } from './style';
-import { ISelect } from '../../interfaces/components';
 
 
 export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel, options, idSelect, selectPokemon, callBack, optionDefault, isDisable, ...rest }, ref) => {

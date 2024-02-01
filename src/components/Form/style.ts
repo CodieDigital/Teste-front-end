@@ -224,7 +224,7 @@ export const ContainerForm = styled.div`
                 > p {
                     font-size: var(--third-title-24);
                     font-weight: var(--weight-bold);
-                    color: #1D1D1D;
+                    color: var(--black-matte-color);
                 }
 
                 > button {
@@ -234,4 +234,59 @@ export const ContainerForm = styled.div`
         }
     }
 
+    @media(max-width: 670px){
+        > form {
+            > section {
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                > div {
+                    min-width: 100%;
+
+                    > select {
+                        min-width: 100%;
+                        
+                    }
+                }   
+            }
+
+            > section:nth-child(2) {
+                > div {
+                    margin-bottom: 0;
+                }
+            }
+
+            > section:nth-child(3) {
+                ul {
+                    width: 100%;
+                    li {
+                        > div {
+                            width: 100%;
+                            flex-direction: column;
+                            > select {
+                                min-width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 550px) {
+        > form {
+
+            > section:nth-child(5) {
+
+                > div:nth-child(2) {
+                    flex-direction: column;
+                    > p {
+                        margin-bottom: 10px;
+                    }
+                }
+                
+            }
+        }
+    }
 `

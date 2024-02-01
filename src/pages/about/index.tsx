@@ -1,4 +1,4 @@
-import { BottomHeader } from '../../components/bottomHeader'
+import { BottomHeader } from '../../components/BottomHeader'
 import DefaultPage from '../default'
 import { Main } from './style'
 

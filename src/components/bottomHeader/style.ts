@@ -22,6 +22,20 @@ export const BottomHeaderStyle = styled.section`
             align-items: center;
             gap: 5px;
 
+            > a:nth-child(1) {
+                font-size: var(--small-size-12);
+                font-weight: var(--weight-bold);
+                text-decoration: none;
+                color: #FFFFFF;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            > a:nth-child(1):hover {
+                color: #FFFFFF80;
+                transition: 0.2s;
+            }
+
             > p {
                 height: 12px;
                 font-size: var(--small-size-12);

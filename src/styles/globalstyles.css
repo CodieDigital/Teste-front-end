@@ -16,6 +16,14 @@
     --weight-bold: 700;
     --weight-semi-bold: 600;
     --weight-medium: 500;
+
+    --primary-color: #E40F0F;
+    --white-color: #FFFFFF;
+    --white-opacity-color: #FFFFFF80;
+    --white-gray-color: #D5D5D5; 
+    --gray-color: #747474;
+    --black-color: #000000;
+    --black-matte-color: #1D1D1D;
 }
 
 body {

@@ -18,7 +18,7 @@ export const HeaderStyle = styled.header`
         height: 62px;
         padding-right: 15px;
         border-radius: 50px;
-        background-color: #E40F0F;
+        background-color: var(--primary-color);
         animation: logoRetracted 2s ease-in-out forwards;
         animation-delay: 5s;
         cursor: pointer;
@@ -38,7 +38,7 @@ export const HeaderStyle = styled.header`
             > h1 {
                 font-size: var(--logo-title-20);
                 font-weight: var(--weight-semi-bold);
-                color: #FFFFFF;
+                color: var(--white-color);
                 animation: textLogoRetracted 2s ease-in-out forwards;
                 animation-delay: 5s;
             }
@@ -46,11 +46,11 @@ export const HeaderStyle = styled.header`
     }
 
     > div:nth-child(1):hover {
-        animation: logoNormal 2s ease-in-out forwards;
+        animation: logoNormal 0.3s ease-in-out forwards;
 
         > div:nth-child(2) {
             > h1 {
-                animation: textLogoNormal 2s ease-in-out forwards;
+                animation: textLogoNormal 0.3s ease-in-out forwards;
             }
         }
     }
@@ -63,8 +63,14 @@ export const HeaderStyle = styled.header`
             font-size: var(--description-size-14);
             font-weight: var(--weight-medium);
             text-decoration: none;
-            color: #000000;
+            color: var(--black-color);
             cursor: pointer;
+            transition: 0.2s;
+        }
+
+        > a:nth-child(1):hover {
+            color: var(--primary-color);
+            transition: 0.2s;
         }
 
         > a:nth-child(2) {
@@ -78,11 +84,19 @@ export const HeaderStyle = styled.header`
             font-weight: var(--weight-bold);
             font-size: var(--description-size-14);
             text-decoration: none;
-            background-color: #E40F0F;
-            color: #FFFFFF;
+            background-color: var(--primary-color);
+            color: var(--white-color);
             border-radius: 30px;
-            border: transparent;
+            border:2px solid transparent;
             cursor: pointer;
+            transition: 0.2s;
+        }
+
+        > a:nth-child(2):hover {
+            border: 2px solid var(--primary-color);
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            transition: 0.2s;
         }
     }
 
@@ -128,6 +142,37 @@ export const HeaderStyle = styled.header`
             font-size: var(--logo-title-20);
             transform: translateX(0);
             visibility: visible;
+        }
+    }
+
+    @media(max-width: 630px) {
+        
+        > div:nth-child(1) {
+            width: 61px;
+            height: 62px;
+            padding-right: 1px;
+    
+            > div:nth-child(2) {
+                > h1 {
+                    display: none;
+                }
+            }
+        }
+
+        > div:nth-child(1):hover {
+            animation: none;
+
+            > div:nth-child(2):hover {
+                display: none;
+            }
+        }
+
+        > nav {
+            flex-direction: column-reverse;
+
+            > a:nth-child(2) {
+                margin: 0 0 5px 0;
+            }
         }
     }
 
