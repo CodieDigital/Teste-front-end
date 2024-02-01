@@ -22,6 +22,5 @@ export default function handler(
     dates.forEach(date => {
         dateStringArray.push(date.toLocaleDateString())
     })
-
     res.status(200).json(dateStringArray)
 }
