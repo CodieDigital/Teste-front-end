@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useState } from 'react'
-import { Button } from '../Button/style'
-import { Input } from '../Input'
-import { Select } from '../Select'
-import { ContainerForm } from './style'
-import { IAreaCity, ICity, IForm, THour, IPokemon, ISchedule, IInfoSchedule } from '../../interfaces/components'
+import { IAreaCity, ICity, IForm, THour, IPokemon, IInfoSchedule } from '../../interfaces/components'
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import axios, { all } from 'axios'  
+import { Button } from '../Button/style'
+import { ContainerForm } from './style'
 import { toast } from 'react-toastify'
+import { Select } from '../Select'
+import { Input } from '../Input'
+import * as yup from 'yup';
+import axios from 'axios'  
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -34,27 +34,27 @@ export const Form = ({regions, dates}: IForm) => {
     
     const [myPokemonsRegionGeneration, setMyPokemonsRegionGeneration] = useState<{region: string, generation: number}[]>([])
     const [rateValue, setRateValue] = useState<number>()
-    const [selectsPokemon, setSelectsPokemon] = useState<JSX.Element[]>([])
+    const [selectsPokemons, setSelectsPokemons] = useState<JSX.Element[]>([])
     const [cities, setCities] = useState<ICity[]>([])
     const [allPokemons, setAllPokemons] = useState<IPokemon[]>([])
     const [hours, setHours] = useState<THour>([])
     
     const createSelectPokemon = () => {
         if(cities.length > 0){
-            if(selectsPokemon.length < 6 && allPokemons.length > 0){
-                setSelectsPokemon([...selectsPokemon, 
+            if(selectsPokemons.length < 6 && allPokemons.length > 0){
+                setSelectsPokemons([...selectsPokemons, 
                     <Select 
-                        {...register(`pokemons.${selectsPokemon.length}`)} 
-                        key={`pokemon-${selectsPokemon.length}`}
-                        valueLabel={`Pokémon 0${selectsPokemon.length + 1}`} 
-                        idSelect={`pokemon-${selectsPokemon.length}`} 
+                        {...register(`pokemons.${selectsPokemons.length}`)} 
+                        key={`pokemon-${selectsPokemons.length}`}
+                        valueLabel={`Pokémon 0${selectsPokemons.length + 1}`} 
+                        idSelect={`pokemon-${selectsPokemons.length}`} 
                         options={allPokemons.map((element) => element.name)}
                         optionDefault='Selecione um pokémon'
                         selectPokemon={true} 
                     />
                 ])
             } else {
-                selectsPokemon.length === 6 ? toast.error('Limite de pokémons alcançado') : toast.error('A cidade não tem pokémons')
+                selectsPokemons.length === 6 ? toast.error('Limite de pokémons alcançado') : toast.error('A cidade não tem pokémons')
             }
         } else {
             toast.error('Selecione primeiro uma cidade')
@@ -123,14 +123,14 @@ export const Form = ({regions, dates}: IForm) => {
 
     const getGenerationAndRate = () => {
         if(allPokemons.length > 0){
-            const rate = 0.03 * (selectsPokemon.length * 70)
+            const rate = 0.03 * (selectsPokemons.length * 70)
             setRateValue(myPokemonsRegionGeneration.reduce((a, b) => Math.max(a, b.generation), 0) * rate)
         }
     }
 
     useEffect(() => {
         getGenerationAndRate()
-    }, [selectsPokemon, allPokemons])
+    }, [selectsPokemons, allPokemons])
 
     return (
         <ContainerForm>
@@ -176,7 +176,7 @@ export const Form = ({regions, dates}: IForm) => {
                     </div>
                     <ul>
                         {
-                            selectsPokemon?.map((item: JSX.Element, index: number) => {
+                            selectsPokemons?.map((item: JSX.Element, index: number) => {
                                 return (
                                     <li key={`list-select-${index}`}>
                                         {
@@ -219,7 +219,7 @@ export const Form = ({regions, dates}: IForm) => {
                     <div>
                         <div>
                             <p>Número de pokémons a serem atendidos:</p>
-                            <p>{selectsPokemon.length === 0 ? '0' : `0${selectsPokemon.length}`}</p>
+                            <p>{selectsPokemons.length === 0 ? '0' : `0${selectsPokemons.length}`}</p>
                         </div>
                         <div>
                             <p>Atendimento unitário por pokémon: </p>
@@ -227,7 +227,7 @@ export const Form = ({regions, dates}: IForm) => {
                         </div>
                         <div>
                             <p>Subtotal:</p>
-                            <p>R$ {selectsPokemon.length * 70}</p>
+                            <p>R$ {selectsPokemons.length > 0 ? selectsPokemons.length * 70 : '0.00'}</p>
                         </div>
                         <div>
                             <p>Taxa geracional*: </p>
@@ -236,7 +236,7 @@ export const Form = ({regions, dates}: IForm) => {
                         <p>*adicionamos uma taxa de 3%, multiplicado pelo número da geração mais alta do time, com limite de até 30%</p>
                     </div>
                     <div>
-                        <p>Valor Total: R$ {rateValue? (parseFloat(rateValue.toFixed(2)) + (selectsPokemon.length * 70)).toFixed(2) : '0.00'}</p>
+                        <p>Valor Total: R$ {rateValue? (parseFloat(rateValue.toFixed(2)) + (selectsPokemons.length * 70)).toFixed(2) : '0.00'}</p>
                         <Button type='submit'>Concluir Agendamento</Button>
                     </div>
                 </section>

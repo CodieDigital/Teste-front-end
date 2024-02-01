@@ -1,8 +1,8 @@
+import { TDate, IRegion, IScheduleProps } from '../../interfaces/pages'
 import { Bounce, ToastContainer, toast } from 'react-toastify';
+import { BottomHeader } from '../../components/BottomHeader'
 import axios, { AxiosResponse } from 'axios'
 import { Form } from '../../components/Form'
-import { BottomHeader } from '../../components/bottomHeader'
-import { TDate, IRegion, IScheduleProps } from '../../interfaces/pages'
 import DefaultPage from '../default'
 import { Main } from './style'
 

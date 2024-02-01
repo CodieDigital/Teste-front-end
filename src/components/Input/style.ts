@@ -10,7 +10,7 @@ export const ContainerLabelInput = styled.div`
     label {
         font-size: var(--small-size-12);
         font-weight: var(--weight-bold);
-        color: #1D1D1D;
+        color: var(--black-matte);
     }
 
     input {
@@ -19,8 +19,8 @@ export const ContainerLabelInput = styled.div`
         font-weight: var(--weight-medium);
         padding-left: 15px;
         border-radius: 8px;
-        border: solid 2px #D5D5D5;
-        color: #747474;
+        border: solid 2px var(--white-gray-color);
+        color: var(--gray-color);
     }
 
 `

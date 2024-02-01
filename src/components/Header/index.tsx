@@ -1,3 +1,4 @@
+import ActiveLink from '../ActiveLink'
 import { HeaderStyle } from './style'
 
 export const Header = () => {
@@ -13,8 +14,8 @@ export const Header = () => {
                     </div>
                 </div>
                 <nav>
-                    <a href=''>Quem somos</a>
-                    <a href=''>Agendar consulta</a>
+                    <ActiveLink children='Quem somos' href='/about' />
+                    <ActiveLink children='Agendar consulta' href='/schedule' />
                 </nav>
             </HeaderStyle>
         </>

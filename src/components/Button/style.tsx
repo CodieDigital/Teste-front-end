@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { IButtonAddPokemon } from '../../interfaces/components'
+import styled from 'styled-components'
 
 export const Button = styled.button<IButtonAddPokemon>`
     max-width: 253px;
