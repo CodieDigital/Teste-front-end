@@ -5,32 +5,40 @@ import { DivLabelSelect } from './style';
 import { ISelect } from '../../interfaces/components';
 
 
-export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel, idSelect, selectPokemon, options, callBack, ...rest }, ref) => {
+export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel, options, idSelect, selectPokemon, callBack, optionDefault, isDisable, ...rest }, ref) => {
     
-    const [expand, setExpand] = useState(false)
+    const [expandToggleArrow, setExpandToggleArrow] = useState(false)
     
     useEffect(() => {
         const handleClick = (event: any) => {
-            if(event.target.tagName === 'SELECT' && event.target.id === idSelect){
-                expand ? setExpand(false) : setExpand(true)
+            if(
+                event.target.tagName === 'SELECT' && 
+                event.target.id === idSelect
+            ){
+                callBack && callBack(event.target.value, event.target.length) 
+                expandToggleArrow ? setExpandToggleArrow(false) : setExpandToggleArrow(true)
             } else {
-                setExpand(false)   
+                setExpandToggleArrow(false)   
             }
         }
         document.addEventListener('click', handleClick)
         return () => {
             document.removeEventListener('click', handleClick);
         }
-    }, [expand])
+    }, [expandToggleArrow])
     
     return (
         <>
-            <DivLabelSelect $selectPokemon={selectPokemon}>
+            <DivLabelSelect $isDisable={isDisable} $selectPokemon={selectPokemon}>
                 <label htmlFor={idSelect}>{valueLabel}</label>
-                <select ref={ref} {...rest} onChange={(e) => {
-                    e.preventDefault()
-                    callBack ? callBack(e.target.value) : null
-                }} name={idSelect} id={idSelect} >
+                <select
+                    name={valueLabel} 
+                    id={idSelect}
+                    disabled={isDisable}
+                    ref={ref}
+                    {...rest}
+                >
+                    <option value="">{optionDefault}</option>
                     {
                         options?.map((item: string, index: number) => {
                             return <option key={index} value={item}>{item}</option>
@@ -38,7 +46,7 @@ export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel,
                     }
                 </select>
                 {
-                    expand ? <div><MdExpandLess  /></div> : <div><MdExpandMore /></div>
+                    expandToggleArrow ? <div><MdExpandLess  /></div> : <div><MdExpandMore /></div>
                 }
             </DivLabelSelect>
         </>

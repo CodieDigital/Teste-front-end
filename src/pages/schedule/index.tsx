@@ -1,14 +1,12 @@
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import axios, { AxiosResponse } from 'axios'
 import { Form } from '../../components/Form'
-import { Input } from '../../components/Input'
-import { Select } from '../../components/Select'
 import { BottomHeader } from '../../components/bottomHeader'
-import { IDate, IRegion, IScheduleProps } from '../../interfaces/pages'
+import { TDate, IRegion, IScheduleProps } from '../../interfaces/pages'
 import DefaultPage from '../default'
 import { Main } from './style'
-import axios, { AxiosResponse } from 'axios'
 
 const SchedulePage = ({regions, dates}: IScheduleProps) => {
-
     return (
         <>
             <DefaultPage>
@@ -27,8 +25,8 @@ export async function getServerSideProps(){
         const regionsResponse: AxiosResponse<{results: IRegion[]}> = await axios.get('https://pokeapi.co/api/v2/region/')
         const regions: IRegion[] = regionsResponse.data.results
         
-        const datesResponse: AxiosResponse<IDate> = await axios.get('http://localhost:3000/api/scheduling/date/')
-        const dates: IDate = datesResponse.data
+        const datesResponse: AxiosResponse<TDate> = await axios.get('http://localhost:3000/api/scheduling/date/')
+        const dates: TDate = datesResponse.data
 
         return {
             props: {regions, dates}
@@ -36,11 +34,11 @@ export async function getServerSideProps(){
 
     } catch (error) {
 
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
 
         return {
             props: {
-                error: "An error occurred while fetching data."
+                error: 'An error occurred while fetching data.'
             }
         };
     }

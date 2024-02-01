@@ -1,4 +1,4 @@
-import { IRegion } from "../pages"
+import { IRegion } from '../pages'
 
 export interface IBottomHeader {
     section: string
@@ -20,12 +20,15 @@ export interface ISelect {
     valueLabel: string 
     idSelect: string
     selectPokemon?: boolean
+    isDisable?: boolean
     options: string[]
-    callBack?: (region: string) => void
+    optionDefault: string
+    callBack?: (region: string, length: number) => void
 }
 
 export interface ISelectPokemon {
     $selectPokemon?: boolean
+    $isDisable?: boolean
 }
 
 export interface IForm {
@@ -48,4 +51,20 @@ export interface ISchedule {
     hours: string[]
 }
 
-export type IHour = string[]
+export type THour = string[]
+
+export interface IAreaCity {
+    name: string
+    url: string
+}
+
+export interface IInfoSchedule {
+    name: string
+    surname: string
+    region: string
+    city: string
+    pokemons: (string | undefined)[]
+    date: string
+    hour: string
+}
+

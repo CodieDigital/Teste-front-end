@@ -2,7 +2,7 @@ import { BottomHeader } from '../../components/bottomHeader'
 import DefaultPage from '../default'
 import { Main } from './style'
 
-const AboutPage = () => {
+const About = () => {
     return (
         <>
             <DefaultPage>
@@ -64,4 +64,4 @@ const AboutPage = () => {
     )
 }
 
-export default AboutPage
+export default About

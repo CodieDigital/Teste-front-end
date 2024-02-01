@@ -5,7 +5,7 @@ export interface IRegion {
 
 export interface IScheduleProps {
     regions: IRegion[]
-    dates: IDate
+    dates: TDate
 }
 
-export type IDate = string[]
+export type TDate = string[]

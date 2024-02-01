@@ -24,20 +24,20 @@ export const BottomHeaderStyle = styled.section`
 
             > p {
                 height: 12px;
-                font-size: 12px;
-                font-weight: bold;
+                font-size: var(--small-size-12);
+                font-weight: var(--weight-bold);
             }
             
         }
 
         > h2 {
-            font-size: 32px;
-            font-weight: bold;
+            font-size: var(--second-title-32);
+            font-weight: var(--weight-bold);
         }
 
         > p {
-            font-size: 14px;
-            font-weight: normal;
+            font-size: var(--description-size-14);
+            font-weight: var(--weight-medium);
         }
     }
 

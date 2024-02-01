@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --second-title-32: 2rem;
+    --icon-select-30: 1.875rem;
+    --third-title-24: 1.5rem;
+    --logo-title-20: 1.25rem;
+    --title-about-18: 1.125rem;
+    --secont-title-about-15: 0.938rem;
+    --description-size-14: 0.875rem;
+    --description-about-13: 0.813rem;
+    --small-size-12: 0.75rem;
+    --small-rate: 0.5rem;
+
+    --weight-extra-bold: 800;
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weight-medium: 500;
+}
+
 body {
     font-family: 'Inter', sans-serif;
 }

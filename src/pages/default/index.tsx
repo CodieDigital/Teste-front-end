@@ -1,6 +1,6 @@
-import { Footer } from "../../components/Footer"
-import { Header } from "../../components/Header"
-import { ContainerHome } from "./style"
+import { Footer } from '../../components/Footer'
+import { Header } from '../../components/Header'
+import { ContainerHome } from './style'
 
 const DefaultPage = ({children, isHome}: any) => {
     return (

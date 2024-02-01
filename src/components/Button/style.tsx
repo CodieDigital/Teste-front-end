@@ -8,8 +8,8 @@ export const Button = styled.button<IButtonAddPokemon>`
     background-color: ${(props: IButtonAddPokemon) => props.$addPokemon ? 'transparent' : '#E40F0F'};
     border: ${(props: IButtonAddPokemon) => props.$addPokemon ? 'solid 1px #1D1D1D' : 'transparent'};
     border-radius: 30px;
-    font-weight: bold;
-    font-size: 14px;
+    font-size: var(--description-size-14);
+    font-weight: var(--weight-bold);
     cursor: pointer;
     padding: 0px 5px;
 `

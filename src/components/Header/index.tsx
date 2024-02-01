@@ -5,8 +5,12 @@ export const Header = () => {
         <>
             <HeaderStyle>
                 <div>
-                    <img src='./images/white-pokeball.svg' alt='' />
-                    <h1>Centro Pokémon</h1>
+                    <div>
+                        <img src='./images/white-pokeball.svg' alt='Imagem de uma pokebola' />
+                    </div>
+                    <div>
+                        <h1>Centro Pokémon</h1>
+                    </div>
                 </div>
                 <nav>
                     <a href=''>Quem somos</a>

@@ -16,8 +16,8 @@ export const Main = styled.main`
 
         > h2 {
             text-align: center;
-            font-size: 32px;
-            font-weight: bold;
+            font-size: var(--second-title-32);
+            font-weight: var(--weight-bold);
             width: 80%;
             max-width: 509px;
             color: #FFFFFF;

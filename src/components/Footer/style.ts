@@ -13,8 +13,8 @@ export const FooterStyle = styled.footer`
         width: 80%;
         text-align: center;
         line-height: 20px;
-        font-size: 14px;
-        font-weight: normal;
+        font-size: var(--description-size-14);
+        font-weight: var(--weight-medium);
         color: #FFFFFF;
     }
 

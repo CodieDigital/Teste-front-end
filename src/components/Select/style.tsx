@@ -13,8 +13,8 @@ export const DivLabelSelect = styled.div<ISelectPokemon>`
     position: relative;
 
     > label {
-        font-size: 12px;
-        font-weight: bold;
+        font-size: var(--small-size-12);
+        font-weight: var(--weight-bold);
         color: #1D1D1D;
     }
 
@@ -25,20 +25,21 @@ export const DivLabelSelect = styled.div<ISelectPokemon>`
         min-width: 256px;
         max-width: ${(props: ISelectPokemon) => (props.$selectPokemon ? '436px' : '265px')};
         height: 45px;
-        font-size: 14px;
-        font-weight: medium;
+        font-size: var(--description-size-14);
+        font-weight: var(--weight-medium);
         padding-left: 10px;
         border-radius: 8px;
         border: solid 2px #D5D5D5;
         color: #747474;
         background-color: transparent;
+        cursor: ${(props: ISelectPokemon) => props.$isDisable ? 'no-drop' : 'pointer'};
     }
 
     > div {
         width: 30px;
         height: 30px;
         position: absolute;
-        font-size: 30px;
+        font-size: var(--icon-select-30);
         color: #747474;
         bottom: 7px;
         right: 10px;

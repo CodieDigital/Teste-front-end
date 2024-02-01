@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DivLabelInput = styled.div`
+export const ContainerLabelInput = styled.div`
 
     display: flex;
     flex-direction: column;
@@ -8,15 +8,15 @@ export const DivLabelInput = styled.div`
     gap: 8px;
 
     label {
-        font-size: 12px;
-        font-weight: bold;
+        font-size: var(--small-size-12);
+        font-weight: var(--weight-bold);
         color: #1D1D1D;
     }
 
     input {
         height: 39px;
-        font-size: 14px;
-        font-weight: medium;
+        font-size: var(--description-size-14);
+        font-weight: var(--weight-medium);
         padding-left: 15px;
         border-radius: 8px;
         border: solid 2px #D5D5D5;

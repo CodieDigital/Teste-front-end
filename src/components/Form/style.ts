@@ -17,8 +17,8 @@ export const ContainerForm = styled.div`
 
         > h3 {
             text-align: center;
-            font-size: 24px;
-            font-weight: 600;
+            font-size: var(--third-title-24);
+            font-weight: var(--weight-semi-bold);
         }
 
         > section:nth-child(2) {
@@ -35,8 +35,8 @@ export const ContainerForm = styled.div`
                 position: relative;
 
                 > label {
-                    font-size: 12px;
-                    font-weight: bold;
+                    font-size: var(--small-size-12);
+                    font-weight: var(--weight-bold);
                     color: #1D1D1D;
                 }
 
@@ -45,8 +45,8 @@ export const ContainerForm = styled.div`
                     -moz-appearance: none;
                     width: 100%;
                     height: 45px;
-                    font-size: 14px;
-                    font-weight: medium;
+                    font-size: var(--description-size-14);
+                    font-weight: var(--weight-medium);
                     padding-left: 10px;
                     border-radius: 8px;
                     border: solid 2px #D5D5D5;
@@ -58,7 +58,7 @@ export const ContainerForm = styled.div`
                     width: 30px;
                     height: 30px;
                     position: absolute;
-                    font-size: 30px;
+                    font-size: var(--icon-select-30);
                     color: #747474;
                     bottom: 7px;
                     right: 6px;
@@ -78,12 +78,12 @@ export const ContainerForm = styled.div`
             > div {
 
                 > h4 {
-                    font-size: 12px;
-                    font-weight: 800;
+                    font-size: var(--small-size-12);
+                    font-weight: var(--weight-extra-bold);
                 }
     
                 > p {
-                    font-size: 12px;
+                    font-size: var(--small-size-12);
                     color: #747474;
                 }
             }
@@ -116,8 +116,8 @@ export const ContainerForm = styled.div`
                         position: relative;
 
                         > label {
-                            font-size: 12px;
-                            font-weight: bold;
+                            font-size: var(--small-size-12);
+                            font-weight: var(--weight-bold);
                             color: #1D1D1D;
                         }
 
@@ -127,8 +127,8 @@ export const ContainerForm = styled.div`
                             width: 100%;
                             max-width: 438px;
                             height: 45px;
-                            font-size: 14px;
-                            font-weight: medium;
+                            font-size: var(--description-size-14);
+                            font-weight: var(--weight-medium);
                             padding-left: 10px;
                             border-radius: 8px;
                             border: solid 2px #D5D5D5;
@@ -140,7 +140,7 @@ export const ContainerForm = styled.div`
                             width: 30px;
                             height: 30px;
                             position: absolute;
-                            font-size: 30px;
+                            font-size: var(--icon-select-30);
                             color: #747474;
                             bottom: 7px;
                             right: 6px;
@@ -161,8 +161,8 @@ export const ContainerForm = styled.div`
                 position: relative;
 
                 > label {
-                    font-size: 12px;
-                    font-weight: bold;
+                    font-size: var(--small-size-12);
+                    font-weight: var(--weight-bold);
                     color: #1D1D1D;
                 }
 
@@ -171,8 +171,8 @@ export const ContainerForm = styled.div`
                     -moz-appearance: none;
                     width: 100%;
                     height: 45px;
-                    font-size: 14px;
-                    font-weight: medium;
+                    font-size: var(--description-size-14);
+                    font-weight: var(--weight-medium);
                     padding-left: 10px;
                     border-radius: 8px;
                     border: solid 2px #D5D5D5;
@@ -184,7 +184,7 @@ export const ContainerForm = styled.div`
                     width: 30px;
                     height: 30px;
                     position: absolute;
-                    font-size: 30px;
+                    font-size: var(--icon-select-30);
                     color: #747474;
                     bottom: 7px;
                     right: 6px;
@@ -205,11 +205,14 @@ export const ContainerForm = styled.div`
                 > div {
                     display: flex;
                     justify-content: space-between;
-                    font-size: 14px;
                     color: #747474;
+                    
+                    > p {
+                        font-size: var(--description-size-14);
+                    }
                 }
                 > p {
-                    font-size: 8px;
+                    font-size: var(--small-rate);
                 }
             }
 
@@ -219,8 +222,8 @@ export const ContainerForm = styled.div`
                 align-items: center;
 
                 > p {
-                    font-size: 24px;
-                    font-weight: 700;
+                    font-size: var(--third-title-24);
+                    font-weight: var(--weight-bold);
                     color: #1D1D1D;
                 }
 
