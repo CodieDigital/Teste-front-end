@@ -3,6 +3,7 @@ import DefaultPage from '../default'
 import { Main } from './style'
 
 const About = () => {
+
     return (
         <>
             <DefaultPage>
@@ -62,6 +63,7 @@ const About = () => {
             </DefaultPage>
         </>
     )
+    
 }
 
 export default About

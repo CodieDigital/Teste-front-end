@@ -10,7 +10,6 @@ export const ContainerForm = styled.div`
     margin: 32px auto;
 
     > form {
-
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -22,6 +21,7 @@ export const ContainerForm = styled.div`
         }
 
         > section:nth-child(2) {
+
             > div {
                 margin-bottom: 32px;
             }
@@ -94,6 +94,7 @@ export const ContainerForm = styled.div`
             flex-direction: column;
 
             > div {
+
                 > h4 {
                     margin-bottom: 8px;
                 }
@@ -106,6 +107,7 @@ export const ContainerForm = styled.div`
                 margin-bottom: 16px;
 
                 > li {
+
                     > div {
                         display: flex;
                         align-items: center;
@@ -152,6 +154,7 @@ export const ContainerForm = styled.div`
         }
 
         > section:nth-child(4) {
+
             > div {
                 display: flex;
                 flex-direction: column;
@@ -211,6 +214,7 @@ export const ContainerForm = styled.div`
                         font-size: var(--description-size-14);
                     }
                 }
+
                 > p {
                     font-size: var(--small-rate);
                 }
@@ -235,7 +239,9 @@ export const ContainerForm = styled.div`
     }
 
     @media(max-width: 670px){
+
         > form {
+
             > section {
                 justify-content: center;
                 align-items: center;
@@ -252,18 +258,23 @@ export const ContainerForm = styled.div`
             }
 
             > section:nth-child(2) {
+
                 > div {
                     margin-bottom: 0;
                 }
             }
 
             > section:nth-child(3) {
+
                 ul {
                     width: 100%;
+
                     li {
+
                         > div {
                             width: 100%;
                             flex-direction: column;
+
                             > select {
                                 min-width: 100%;
                             }
@@ -281,6 +292,7 @@ export const ContainerForm = styled.div`
 
                 > div:nth-child(2) {
                     flex-direction: column;
+                    
                     > p {
                         margin-bottom: 10px;
                     }

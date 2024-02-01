@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
  
 function ActiveLink({ children, href }: {children: string, href: string}) {
+
   const router = useRouter()
  
   const handleClick = (e: React.MouseEvent) => {
@@ -13,6 +14,7 @@ function ActiveLink({ children, href }: {children: string, href: string}) {
       {children}
     </a>
   )
+  
 }
  
 export default ActiveLink

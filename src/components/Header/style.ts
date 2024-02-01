@@ -10,7 +10,6 @@ export const HeaderStyle = styled.header`
     max-width: 1300px;
     margin: 0 auto;
 
-
     > div:nth-child(1) {
         display: flex;
         align-items: center;
@@ -35,6 +34,7 @@ export const HeaderStyle = styled.header`
         }
         
         > div:nth-child(2) {
+
             > h1 {
                 font-size: var(--logo-title-20);
                 font-weight: var(--weight-semi-bold);
@@ -49,6 +49,7 @@ export const HeaderStyle = styled.header`
         animation: logoNormal 0.3s ease-in-out forwards;
 
         > div:nth-child(2) {
+
             > h1 {
                 animation: textLogoNormal 0.3s ease-in-out forwards;
             }
@@ -153,6 +154,7 @@ export const HeaderStyle = styled.header`
             padding-right: 1px;
     
             > div:nth-child(2) {
+                
                 > h1 {
                     display: none;
                 }

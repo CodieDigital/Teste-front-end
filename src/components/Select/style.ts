@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { ISelectPokemon } from '../../interfaces/components'
+import styled from 'styled-components'
 
 export const DivLabelSelect = styled.div<ISelectPokemon>`
 

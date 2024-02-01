@@ -4,6 +4,7 @@ import { BottomHeaderStyle } from './style'
 import ActiveLink from '../ActiveLink'
 
 export const BottomHeader = ({section, description}: IBottomHeader) => {
+
     return (
         <>
             <BottomHeaderStyle>
@@ -19,4 +20,5 @@ export const BottomHeader = ({section, description}: IBottomHeader) => {
             </BottomHeaderStyle>
         </>
     )
+    
 }

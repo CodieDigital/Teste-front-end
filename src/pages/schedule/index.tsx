@@ -1,5 +1,4 @@
 import { TDate, IRegion, IScheduleProps } from '../../interfaces/pages'
-import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { BottomHeader } from '../../components/BottomHeader'
 import axios, { AxiosResponse } from 'axios'
 import { Form } from '../../components/Form'
@@ -34,13 +33,13 @@ export async function getServerSideProps(){
 
     } catch (error) {
 
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error)
 
         return {
             props: {
                 error: 'An error occurred while fetching data.'
             }
-        };
+        }
     }
 }
 

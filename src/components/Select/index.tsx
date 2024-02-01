@@ -1,8 +1,8 @@
-import { ISelect } from '../../interfaces/components';
+import { ISelect } from '../../interfaces/components'
 import React, { useEffect, useState } from 'react'
-import { MdExpandMore } from 'react-icons/md';
-import { MdExpandLess } from 'react-icons/md';
-import { DivLabelSelect } from './style';
+import { MdExpandMore } from 'react-icons/md'
+import { MdExpandLess } from 'react-icons/md'
+import { DivLabelSelect } from './style'
 
 
 export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel, options, idSelect, selectPokemon, callBack, optionDefault, isDisable, ...rest }, ref) => {
@@ -23,7 +23,7 @@ export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel,
         }
         document.addEventListener('click', handleClick)
         return () => {
-            document.removeEventListener('click', handleClick);
+            document.removeEventListener('click', handleClick)
         }
     }, [expandToggleArrow])
     
@@ -38,7 +38,7 @@ export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel,
                     ref={ref}
                     {...rest}
                 >
-                    <option value="">{optionDefault}</option>
+                    <option value=''>{optionDefault}</option>
                     {
                         options?.map((item: string, index: number) => {
                             return <option key={index} value={item}>{item}</option>
