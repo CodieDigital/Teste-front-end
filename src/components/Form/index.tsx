@@ -1,4 +1,4 @@
-import { ScheduleContext } from '../../context/ScheduleContext';
+import { ScheduleContext } from '../../context/ScheduleContext'
 import { IForm } from '../../interfaces/components'
 import { Button } from '../Button/style'
 import { ContainerForm } from './style'
@@ -20,7 +20,8 @@ export const Form = ({regions, dates}: IForm) => {
         register,
         getHours,
         cities, 
-        hours,
+        errors,
+        time,
     } = useContext(ScheduleContext)
     
     return (
@@ -34,13 +35,15 @@ export const Form = ({regions, dates}: IForm) => {
                         idInput='name' 
                         typeInput='text' 
                         placeholder='Digite seu nome' 
+                        error={errors.name}
                     />
                     <Input 
                         {...register('surname')} 
                         valueLabel='Sobrenome' 
                         idInput='surname' 
                         typeInput='text' 
-                        placeholder='Digite seu sobrenome' 
+                        placeholder='Digite seu sobrenome'
+                        error={errors.surname}
                     />
                     <Select 
                         {...register('region')} 
@@ -49,6 +52,7 @@ export const Form = ({regions, dates}: IForm) => {
                         idSelect='region' 
                         options={regions.map((element) => element.name)} 
                         optionDefault='Selecione uma região' 
+                        error={errors.region}
                     />
                     <Select 
                         {...register('city')} 
@@ -58,6 +62,7 @@ export const Form = ({regions, dates}: IForm) => {
                         options={cities.map((element: {name: string}) => element.name)}
                         optionDefault={cities.length ? 'Selecione uma cidade' : 'Selecione primeiro uma região'} 
                         isDisable={cities.length ? false : true}
+                        error={errors.city}
                     />
                 </section>
                 <section>
@@ -90,20 +95,22 @@ export const Form = ({regions, dates}: IForm) => {
                 </section>
                 <section>
                     <Select 
-                        {...register('date')} 
+                        {...register('schedule.date')} 
                         callBack={getHours} 
                         valueLabel='Data para atendimento' 
                         idSelect='dateSchedule' 
                         options={dates} 
-                        optionDefault='Selecione uma data' 
+                        optionDefault='Selecione uma data'
+                        error={errors.schedule?.date}
                     />
                     <Select 
-                        {...register('hour')} 
+                        {...register('schedule.time')} 
                         valueLabel='Horário de atendimento' 
                         idSelect='hourSchedule' 
-                        options={hours} 
-                        optionDefault={hours.length ? 'Selecione um horário' : 'Selecione primeiro uma data'} 
-                        isDisable={hours.length ? false : true}
+                        options={time} 
+                        optionDefault={time.length ? 'Selecione um horário' : 'Selecione primeiro uma data'} 
+                        isDisable={time.length ? false : true}
+                        error={errors.schedule?.time}
                     />
                 </section>
                 <section>

@@ -1,24 +1,44 @@
 import { TDate, IRegion, IScheduleProps } from '../../interfaces/pages'
 import { BottomHeader } from '../../components/BottomHeader'
-import axios, { AxiosResponse } from 'axios'
 import { Form } from '../../components/Form'
-import DefaultPage from '../default'
+import axios, { AxiosResponse } from 'axios'
 import { Main } from './style'
+import { useContext } from 'react'
+import { ScheduleContext } from '../../context/ScheduleContext'
+import { SuccessOrError } from '../../components/SuccessOrError'
+import DefaultPage from '../default'
+
 
 const SchedulePage = ({regions, dates}: IScheduleProps) => {
+
+    const { isError } = useContext(ScheduleContext)
+
     return (
         <>
-            <DefaultPage>
+            <DefaultPage isHome={true}>
                 <BottomHeader section='Agendar consulta' description='Recupere seus pokémons em 5 segundos' />
-                <Main>
-                    <Form regions={regions} dates={dates} />
-                </Main>
+                {
+                    isError === true ? <SuccessOrError isError={isError} /> : null
+                }
+                {
+                    isError === false ? <SuccessOrError isError={isError} /> : null
+                }
+                {
+                    isError === undefined && 
+                        <Main>
+                            <Form regions={regions} dates={dates} />
+                        </Main>
+                }
+                
+                
             </DefaultPage>
         </>
     )
+
 }
 
 export async function getServerSideProps(){
+
     try {
         
         const regionsResponse: AxiosResponse<{results: IRegion[]}> = await axios.get('https://pokeapi.co/api/v2/region/')
@@ -33,14 +53,10 @@ export async function getServerSideProps(){
 
     } catch (error) {
 
-        console.error('Error fetching data:', error)
-
-        return {
-            props: {
-                error: 'An error occurred while fetching data.'
-            }
-        }
+        console.error('An error occurred while fetching data.', error)
+    
     }
+
 }
 
 export default SchedulePage

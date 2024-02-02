@@ -1,6 +1,6 @@
 import { BottomHeader } from '../../components/BottomHeader'
-import DefaultPage from '../default'
 import { Main } from './style'
+import DefaultPage from '../default'
 
 const About = () => {
 

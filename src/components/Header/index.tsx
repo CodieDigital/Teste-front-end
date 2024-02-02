@@ -1,5 +1,7 @@
-import ActiveLink from '../ActiveLink'
 import { HeaderStyle } from './style'
+import ImagePokeBall from '../../../public/images/white-pokeball.svg'
+import ActiveLink from '../ActiveLink'
+import Image from 'next/image'
 
 export const Header = () => {
     return (
@@ -7,7 +9,7 @@ export const Header = () => {
             <HeaderStyle>
                 <div>
                     <div>
-                        <img src='./images/white-pokeball.svg' alt='Imagem de uma pokebola' />
+                        <Image src={ImagePokeBall} alt='Imagem de uma pokebola' />
                     </div>
                     <div>
                         <h1>Centro Pokémon</h1>

@@ -33,8 +33,10 @@ export const DivLabelSelect = styled.div<ISelectPokemon>`
         color: var(--gray-color);
         background-color: transparent;
         cursor: ${(props: ISelectPokemon) => props.$isDisable ? 'no-drop' : 'pointer'};
-    }
 
+    }
+    
+    
     > div {
         width: 30px;
         height: 30px;
@@ -44,6 +46,13 @@ export const DivLabelSelect = styled.div<ISelectPokemon>`
         bottom: 7px;
         right: 10px;
         z-index: -1;
+    }
+
+    .error {
+        position: absolute;
+        bottom: -15px;
+        left: 5px;
+        color: red;
     }
 
 `

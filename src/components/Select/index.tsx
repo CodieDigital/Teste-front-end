@@ -5,7 +5,18 @@ import { MdExpandLess } from 'react-icons/md'
 import { DivLabelSelect } from './style'
 
 
-export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel, options, idSelect, selectPokemon, callBack, optionDefault, isDisable, ...rest }, ref) => {
+export const Select = React.forwardRef<HTMLSelectElement, ISelect>(
+    ({
+        valueLabel, 
+        options, 
+        idSelect, 
+        selectPokemon, 
+        callBack, 
+        optionDefault, 
+        isDisable, 
+        error, 
+        ...rest 
+    }, ref) => {
     
     const [expandToggleArrow, setExpandToggleArrow] = useState(false)
     
@@ -45,6 +56,7 @@ export const Select = React.forwardRef<HTMLSelectElement, ISelect>(({valueLabel,
                         })
                     }
                 </select>
+                { error && <p className='error'>* {error.message?.toString()}</p> }
                 {
                     expandToggleArrow ? <div><MdExpandLess  /></div> : <div><MdExpandMore /></div>
                 }

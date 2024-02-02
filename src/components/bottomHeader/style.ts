@@ -4,7 +4,7 @@ export const BottomHeaderStyle = styled.section`
 
     display: flex;
     width: 100%;
-    height: 187px;
+    min-height: 187px;
     color: #FFFFFF;
     background-color: #E40F0F;
 
@@ -25,7 +25,6 @@ export const BottomHeaderStyle = styled.section`
             > a:nth-child(1) {
                 font-size: var(--small-size-12);
                 font-weight: var(--weight-bold);
-                text-decoration: none;
                 color: #FFFFFF;
                 cursor: pointer;
                 transition: 0.2s;

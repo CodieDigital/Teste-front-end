@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Main = styled.main`
+export const ContainerSuccessOrError = styled.div`
     width: 100%;
     height: 100%;
 
@@ -11,8 +11,8 @@ export const Main = styled.main`
         gap: 20px;
         padding: 20px 30px 30px 30px;
         width: 365px;
-        height: 203px;
-        margin: 150px auto 0 auto;
+        min-height: 203px;
+        margin: 100px auto 0 auto;
         background-color: var(--rose-opacity-color);
         border: 1px solid var(--rose-color);
         border-radius: 8px;
@@ -52,7 +52,7 @@ export const Main = styled.main`
             color: var(--primary-color);
             transition: 0.2s;
         }
-
+    
     
         > img {
             width: 42px;

@@ -152,9 +152,11 @@ export const HeaderStyle = styled.header`
             width: 61px;
             height: 62px;
             padding-right: 1px;
+            animation: none;
     
             > div:nth-child(2) {
-                
+                animation: none;
+
                 > h1 {
                     display: none;
                 }
@@ -165,6 +167,7 @@ export const HeaderStyle = styled.header`
             animation: none;
 
             > div:nth-child(2):hover {
+                animation: none;
                 display: none;
             }
         }

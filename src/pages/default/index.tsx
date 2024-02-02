@@ -21,7 +21,7 @@ const DefaultPage = ({children, isHome}: any) => {
                     }
                 <Footer />
             </>
-
+            
     )
 }
 

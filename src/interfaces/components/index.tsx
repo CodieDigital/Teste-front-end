@@ -1,3 +1,4 @@
+import { FieldError } from 'react-hook-form'
 import { IRegion } from '../pages'
 
 export interface IBottomHeader {
@@ -14,6 +15,7 @@ export interface IInput {
     idInput: string
     typeInput: string
     placeholder: string
+    error?: FieldError,
 }
 
 export interface ISelect {
@@ -24,6 +26,7 @@ export interface ISelect {
     options: string[]
     optionDefault: string
     callBack?: (region: string, length: number) => void
+    error?: FieldError,
 }
 
 export interface ISelectPokemon {
@@ -46,12 +49,6 @@ export interface IPokemon {
     url: string
 }
 
-export interface ISchedule {
-    date: string
-    hours: string[]
-}
-
-export type THour = string[]
 
 export interface IAreaCity {
     name: string
@@ -63,8 +60,16 @@ export interface IInfoSchedule {
     surname: string
     region: string
     city: string
-    pokemons: (string | undefined)[]
-    date: string
-    hour: string
+    pokemons?: (string | undefined)[]
+    schedule: {
+        date: string
+        time: string
+    }
 }
 
+export type ISchedule =  {    
+    date: string
+    time: string
+}
+
+export type TTime = string[]
